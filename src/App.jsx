@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Mail, 
@@ -22,6 +22,18 @@ import './App.css';
 
 function App() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const contactInfo = {
     name: "Sandeep Malla VH",
@@ -83,11 +95,13 @@ function App() {
       {/* Main Container */}
       <div style={{
         display: 'flex',
-        gap: '2rem',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? '1.5rem' : '2rem',
         maxWidth: '1200px',
         width: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: isMobile ? '1rem' : '2rem'
       }}>
         
         {/* Left Panel - Personal Card */}
@@ -97,8 +111,9 @@ function App() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           style={{
             position: 'relative',
-            width: '400px',
-            height: '500px',
+            width: isMobile ? '100%' : '400px',
+            maxWidth: isMobile ? '350px' : '400px',
+            height: isMobile ? '400px' : '500px',
             perspective: '1000px'
           }}
         >
@@ -121,7 +136,7 @@ function App() {
               height: '100%',
               backfaceVisibility: 'hidden',
               borderRadius: '1.5rem',
-              padding: '2rem',
+              padding: isMobile ? '1.5rem' : '2rem',
               background: '#151A21',
               backdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -141,7 +156,7 @@ function App() {
                   alt="Monytix Logo" 
                   className="monytix-logo"
                   style={{
-                    height: '60px',
+                    height: isMobile ? '50px' : '60px',
                     width: 'auto',
                     filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))'
                   }}
@@ -151,7 +166,7 @@ function App() {
               {/* Name and Title */}
               <div>
                 <h1 style={{
-                  fontSize: '1.875rem',
+                  fontSize: isMobile ? '1.5rem' : '1.875rem',
                   fontWeight: 'bold',
                   color: 'white',
                   marginBottom: '0.5rem',
@@ -160,7 +175,7 @@ function App() {
                   {contactInfo.name}
                 </h1>
                 <p style={{
-                  fontSize: '1.125rem',
+                  fontSize: isMobile ? '1rem' : '1.125rem',
                   color: '#A0A8B5',
                   marginBottom: '0.25rem'
                 }}>
@@ -209,7 +224,7 @@ function App() {
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
               borderRadius: '1.5rem',
-              padding: '2rem',
+              padding: isMobile ? '1.5rem' : '2rem',
               background: '#151A21',
               backdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -230,7 +245,7 @@ function App() {
                   alt="Monytix Logo" 
                   className="monytix-logo"
                   style={{
-                    height: '50px',
+                    height: isMobile ? '40px' : '50px',
                     width: 'auto',
                     filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))'
                   }}
@@ -267,10 +282,11 @@ function App() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
           style={{
-            width: '350px',
-            height: '500px',
+            width: isMobile ? '100%' : '350px',
+            maxWidth: isMobile ? '350px' : '350px',
+            height: isMobile ? '400px' : '500px',
             borderRadius: '1.5rem',
-            padding: '2rem',
+            padding: isMobile ? '1.5rem' : '2rem',
             background: '#1E252E',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.15)',
