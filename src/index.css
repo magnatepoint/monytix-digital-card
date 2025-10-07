@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0E1116;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.glass-effect {
+  background: #151A21;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 224, 161, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9, #d946ef, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(14, 165, 233, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { width: 4px; height: 4px; top: 20%; left: 20%; animation-delay: 0s; background: rgba(0, 224, 161, 0.3); }
+.particle:nth-child(2) { width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s; background: rgba(0, 224, 161, 0.2); }
+.particle:nth-child(3) { width: 3px; height: 3px; top: 80%; left: 40%; animation-delay: 4s; background: rgba(0, 224, 161, 0.4); }
+.particle:nth-child(4) { width: 5px; height: 5px; top: 40%; left: 60%; animation-delay: 1s; background: rgba(0, 224, 161, 0.3); }
+.particle:nth-child(5) { width: 4px; height: 4px; top: 70%; left: 10%; animation-delay: 3s; background: rgba(0, 224, 161, 0.2); }
+
+/* Monytix Brand Effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 224, 161, 0.25);
+}
+
+.premium-glow {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+}
+
+.ai-accent-gradient {
+  background: linear-gradient(90deg, #00E0A1, #00BFA5);
+}
+
+.premium-gradient {
+  background: linear-gradient(90deg, #FFD166, #FFB347);
+}
+
+.analytics-gradient {
+  background: linear-gradient(135deg, #00E0A1, #4FC3F7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  .left-panel {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: 400px !important;
+  }
+  
+  .right-panel {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: 400px !important;
+  }
+  
+  .card-content {
+    padding: 1.5rem !important;
+  }
+  
+  .monytix-logo {
+    height: 50px !important;
+    width: auto !important;
+  }
+  
+  .name-text {
+    font-size: 1.5rem !important;
+  }
+  
+  .title-text {
+    font-size: 1rem !important;
+  }
+  
+  .company-text {
+    font-size: 0.875rem !important;
+  }
+  
+  .contact-item {
+    font-size: 0.875rem !important;
+  }
+  
+  .action-button {
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .quick-action-button {
+    padding: 0.75rem !important;
+  }
+  
+  .quick-action-icon {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  
+  .quick-action-text {
+    font-size: 0.6875rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0.75rem !important;
+  }
+  
+  .left-panel, .right-panel {
+    height: 350px !important;
+  }
+  
+  .card-content {
+    padding: 1.25rem !important;
+  }
+  
+  .monytix-logo {
+    height: 40px !important;
+    width: auto !important;
+  }
+  
+  .name-text {
+    font-size: 1.25rem !important;
+  }
+  
+  .title-text {
+    font-size: 0.875rem !important;
+  }
+  
+  .company-text {
+    font-size: 0.75rem !important;
+  }
+  
+  .contact-item {
+    font-size: 0.75rem !important;
+  }
+}

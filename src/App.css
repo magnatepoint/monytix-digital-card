@@ -1,0 +1,114 @@
+/* Custom animations and effects for Monytix Digital Card */
+
+.card-glow {
+  box-shadow: 
+    0 0 20px rgba(14, 165, 233, 0.3),
+    0 0 40px rgba(14, 165, 233, 0.2),
+    0 0 60px rgba(14, 165, 233, 0.1);
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(14, 165, 233, 0.3),
+      0 0 40px rgba(14, 165, 233, 0.2),
+      0 0 60px rgba(14, 165, 233, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(14, 165, 233, 0.5),
+      0 0 60px rgba(14, 165, 233, 0.3),
+      0 0 90px rgba(14, 165, 233, 0.2);
+  }
+}
+
+.neural-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(14, 165, 233, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px, 60px 60px, 40px 40px;
+  animation: neural-pulse 4s ease-in-out infinite;
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+.holographic-effect {
+  background: linear-gradient(
+    45deg,
+    rgba(14, 165, 233, 0.1),
+    rgba(217, 70, 239, 0.1),
+    rgba(245, 158, 11, 0.1),
+    rgba(14, 165, 233, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: holographic-shift 6s ease-in-out infinite;
+}
+
+@keyframes holographic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .card-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .contact-button {
+    padding: 0.75rem;
+  }
+  
+  .social-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .card-glow,
+  .neural-network,
+  .holographic-effect,
+  .particle {
+    animation: none;
+  }
+  
+  .motion-div {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .gradient-text {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+  }
+}
