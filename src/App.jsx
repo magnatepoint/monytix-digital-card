@@ -39,7 +39,7 @@ function App() {
     name: "Sandeep Malla VH",
     title: "Cofounder, CEO",
     company: "Monytix",
-    email: "sandeep@monytix",
+    email: "sandeep@monytix.ai",
     phone: "+91 96031 13359",
     website: "monytix.ai",
     linkedin: "https://www.linkedin.com/in/sandeepmalla",
