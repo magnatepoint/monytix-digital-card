@@ -101,7 +101,7 @@ function App() {
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: isMobile ? '1rem' : '2rem'
+        padding: isMobile ? '1rem 0.5rem 2rem 0.5rem' : '2rem'
       }}>
         
         {/* Left Panel - Personal Card */}
@@ -113,7 +113,7 @@ function App() {
             position: 'relative',
             width: isMobile ? '100%' : '400px',
             maxWidth: isMobile ? '350px' : '400px',
-            height: isMobile ? '400px' : '500px',
+            height: isMobile ? '350px' : '500px',
             perspective: '1000px'
           }}
         >
@@ -284,7 +284,7 @@ function App() {
           style={{
             width: isMobile ? '100%' : '350px',
             maxWidth: isMobile ? '350px' : '350px',
-            height: isMobile ? '400px' : '500px',
+            height: isMobile ? '350px' : '500px',
             borderRadius: '1.5rem',
             padding: isMobile ? '1.5rem' : '2rem',
             background: '#1E252E',

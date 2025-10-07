@@ -76,28 +76,31 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   body {
-    padding: 0.5rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   .main-container {
     flex-direction: column !important;
     gap: 1rem !important;
-    padding: 0.5rem !important;
+    padding: 1rem 0.5rem 2rem 0.5rem !important;
     max-width: 100% !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
   }
   
   .left-panel {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    min-height: 350px !important;
+    height: 320px !important;
+    min-height: 320px !important;
   }
   
   .right-panel {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    min-height: 350px !important;
+    height: 320px !important;
+    min-height: 320px !important;
   }
   
   .card-content {
@@ -148,39 +151,87 @@ body {
   .floating-particles {
     display: none !important;
   }
+  
+  /* Ensure content fits on mobile screens */
+  #root {
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Add extra bottom padding for mobile browsers */
+  .mobile-bottom-padding {
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0.75rem 0.25rem 3rem 0.25rem !important;
+  }
+  
+  .left-panel, .right-panel {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+  
+  .card-content {
+    padding: 0.75rem !important;
+  }
 }
 
 @media (max-width: 480px) {
   .main-container {
-    padding: 0.75rem !important;
+    padding: 0.75rem 0.25rem 3rem 0.25rem !important;
   }
   
   .left-panel, .right-panel {
-    height: 350px !important;
+    height: 300px !important;
+    min-height: 300px !important;
   }
   
   .card-content {
-    padding: 1.25rem !important;
+    padding: 0.75rem !important;
   }
   
   .monytix-logo {
-    height: 40px !important;
+    height: 35px !important;
     width: auto !important;
   }
   
   .name-text {
-    font-size: 1.25rem !important;
+    font-size: 1.125rem !important;
+    line-height: 1.1 !important;
   }
   
   .title-text {
-    font-size: 0.875rem !important;
+    font-size: 0.8rem !important;
   }
   
   .company-text {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
   }
   
   .contact-item {
     font-size: 0.75rem !important;
+    padding: 0.4rem !important;
+  }
+  
+  .action-button {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .quick-action-button {
+    padding: 0.4rem !important;
+  }
+  
+  .quick-action-icon {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+  }
+  
+  .quick-action-text {
+    font-size: 0.55rem !important;
   }
 }
